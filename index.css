@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 12%;
+    --primary: 348 56% 27%;
+    --primary-foreground: 40 30% 97%;
+    --secondary: 240 5% 96%;
+    --secondary-foreground: 240 10% 12%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 45%;
+    --accent: 38 62% 46%;
+    --accent-foreground: 240 10% 12%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 348 56% 27%;
+    --brand: 38 62% 46%;
+    --brand-foreground: 240 10% 12%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --font-heading: ui-sans-serif, system-ui, sans-serif;
+    --font-body: ui-sans-serif, system-ui, sans-serif;
+    --font-display: ui-sans-serif, system-ui, sans-serif;
+    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --sidebar-background: 240 14% 11%;
+    --sidebar-foreground: 240 10% 88%;
+    --sidebar-primary: 38 62% 46%;
+    --sidebar-primary-foreground: 240 10% 12%;
+    --sidebar-accent: 240 14% 17%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 14% 18%;
+    --sidebar-ring: 38 62% 46%;
+  }
+
+  .dark {
+    --background: 240 14% 8%;
+    --foreground: 240 10% 96%;
+    --card: 240 14% 11%;
+    --card-foreground: 240 10% 96%;
+    --popover: 240 14% 11%;
+    --popover-foreground: 240 10% 96%;
+    --primary: 38 62% 52%;
+    --primary-foreground: 240 14% 8%;
+    --secondary: 240 14% 16%;
+    --secondary-foreground: 240 10% 96%;
+    --muted: 240 14% 16%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 348 56% 45%;
+    --accent-foreground: 240 10% 96%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 14% 18%;
+    --input: 240 14% 18%;
+    --ring: 38 62% 52%;
+    --brand: 38 62% 52%;
+    --brand-foreground: 240 14% 8%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 14% 8%;
+    --sidebar-foreground: 240 10% 88%;
+    --sidebar-primary: 38 62% 52%;
+    --sidebar-primary-foreground: 240 14% 8%;
+    --sidebar-accent: 240 14% 16%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 240 14% 18%;
+    --sidebar-ring: 38 62% 52%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body;
+    overscroll-behavior: none;
+  }
+
+  button,
+  [role="tab"],
+  [role="tablist"],
+  [role="menu"],
+  [role="menuitem"],
+  .lucide {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+}
+
+@layer utilities {
+  .no-select {
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  main button:not([role="tab"]),
+  main [role="combobox"] {
+    min-height: 44px;
+  }
+}

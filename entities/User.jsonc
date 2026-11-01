@@ -1,0 +1,21 @@
+{
+  "properties": {
+    "role": {
+      "type": "string",
+      "description": "The role of the user in the app",
+      "enum": [
+        "admin",
+        "user"
+      ]
+    },
+    "profile_logo": {
+      "type": "string",
+      "description": "URL of the HBCU team logo the user chose as their profile picture"
+    }
+  },
+  "required": [
+    "role"
+  ],
+  "name": "User",
+  "type": "object"
+}

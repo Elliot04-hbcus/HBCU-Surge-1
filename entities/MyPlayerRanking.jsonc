@@ -1,0 +1,64 @@
+{
+  "name": "MyPlayerRanking",
+  "type": "object",
+  "properties": {
+    "sport": {
+      "type": "string",
+      "enum": [
+        "football",
+        "basketball"
+      ]
+    },
+    "athlete_id": {
+      "type": "string",
+      "description": "ESPN athlete id"
+    },
+    "player_name": {
+      "type": "string"
+    },
+    "team_name": {
+      "type": "string"
+    },
+    "team_logo": {
+      "type": "string"
+    },
+    "team_id": {
+      "type": "string"
+    },
+    "headshot": {
+      "type": "string"
+    },
+    "position": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "sport",
+    "player_name",
+    "rank"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "Topic",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Topic title"
+    },
+    "body": {
+      "type": "string",
+      "description": "Optional topic details / body text"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the topic creator"
+    },
+    "author_id": {
+      "type": "string",
+      "description": "User id of the topic creator"
+    },
+    "sport": {
+      "type": "string",
+      "enum": [
+        "football",
+        "basketball"
+      ],
+      "description": "Sport category for this topic"
+    },
+    "likes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User ids who liked this topic"
+    }
+  },
+  "required": [
+    "title"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "data.author_id": "{{user.id}}"
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.author_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

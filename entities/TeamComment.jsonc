@@ -1,0 +1,67 @@
+{
+  "name": "TeamComment",
+  "type": "object",
+  "properties": {
+    "team_id": {
+      "type": "string",
+      "description": "Team id this comment belongs to"
+    },
+    "sport": {
+      "type": "string",
+      "enum": [
+        "football",
+        "basketball"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "description": "The fan's comment text"
+    },
+    "author_name": {
+      "type": "string",
+      "description": "Display name of the commenter"
+    },
+    "author_id": {
+      "type": "string",
+      "description": "User id of the commenter (set by postTeamComment so the author can delete their own message)"
+    },
+    "parent_id": {
+      "type": "string",
+      "description": "Id of the parent comment this is replying to (empty for top-level)"
+    },
+    "likes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "User ids who liked this comment"
+    }
+  },
+  "required": [
+    "team_id",
+    "body"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "data.author_id": "{{user.id}}"
+    },
+    "delete": {
+      "$or": [
+        {
+          "data.author_id": "{{user.id}}"
+        },
+        {
+          "user_condition": {
+            "role": "admin"
+          }
+        }
+      ]
+    }
+  }
+}

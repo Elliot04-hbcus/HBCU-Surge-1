@@ -1,0 +1,59 @@
+<mjml>
+  <mj-head>
+    <mj-title>Your team plays {{opponent_name}} {{home_away}} — {{game_date}}</mj-title>
+    <mj-preview>Your favorite HBCU team is back in action {{game_date}} at {{game_time}}</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="Arial, Helvetica, sans-serif" />
+      <mj-section background-color="#ffffff" padding="0 36px" />
+      <mj-text color="#1c1c22" font-size="15px" line-height="1.6" padding="0" />
+      <mj-button background-color="#6b1e2e" border-radius="12px" font-weight="700" inner-padding="14px 28px" align="left" />
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="#f4f4f5">
+    <mj-section background-color="#6b1e2e" padding="20px 36px">
+      <mj-column>
+        <mj-text color="#faf8f5" font-size="18px" font-weight="bold" padding="0">
+          HBCU Surge
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="40px 36px 12px">
+      <mj-column>
+        <mj-text font-size="28px" font-weight="bold" line-height="1.2" padding="0">
+          Upcoming Game Alert
+        </mj-text>
+        <mj-text color="#6e6e77" font-size="15px" padding="8px 0 0">
+          Hey {{first_name}}, your favorite team is back in action.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="12px 36px">
+      <mj-column>
+        <mj-text font-size="20px" font-weight="bold" padding="0">
+          {{team_name}} {{home_away}} {{opponent_name}}
+        </mj-text>
+        <mj-text color="#6e6e77" font-size="15px" padding="8px 0 0">
+          {{game_date}} at {{game_time}}
+        </mj-text>
+        <mj-text color="#6e6e77" font-size="14px" padding="4px 0 0">
+          {{venue}}
+        </mj-text>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="24px 36px">
+      <mj-column>
+        <mj-button href="{{game_url}}">
+          View Game Details
+        </mj-button>
+      </mj-column>
+    </mj-section>
+    <mj-section padding="0 36px 40px">
+      <mj-column>
+        <mj-divider border-color="#e4e4e7" border-width="1px" />
+        <mj-text color="#6e6e77" font-size="12px" padding="16px 0 0">
+          You're receiving this because you favorited {{team_name}} on HBCU Surge.
+        </mj-text>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>

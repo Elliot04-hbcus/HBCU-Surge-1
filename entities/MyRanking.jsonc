@@ -1,0 +1,51 @@
+{
+  "name": "MyRanking",
+  "type": "object",
+  "properties": {
+    "sport": {
+      "type": "string",
+      "enum": [
+        "football",
+        "basketball"
+      ]
+    },
+    "team_id": {
+      "type": "string"
+    },
+    "team_name": {
+      "type": "string"
+    },
+    "team_logo": {
+      "type": "string"
+    },
+    "rank": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "sport",
+    "team_name",
+    "rank"
+  ],
+  "rls": {
+    "read": {},
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

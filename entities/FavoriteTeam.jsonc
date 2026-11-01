@@ -1,0 +1,47 @@
+{
+  "name": "FavoriteTeam",
+  "type": "object",
+  "properties": {
+    "team_id": {
+      "type": "string",
+      "description": "Team id"
+    },
+    "team_name": {
+      "type": "string"
+    },
+    "team_logo": {
+      "type": "string"
+    },
+    "sport": {
+      "type": "string",
+      "enum": [
+        "football",
+        "basketball"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "description": "Optional notes about this favorite team",
+      "maxLength": 1000
+    }
+  },
+  "required": [
+    "team_id",
+    "team_name",
+    "sport"
+  ],
+  "rls": {
+    "read": {
+      "created_by_id": "{{user.id}}"
+    },
+    "create": {
+      "created_by_id": "{{user.id}}"
+    },
+    "update": {
+      "created_by_id": "{{user.id}}"
+    },
+    "delete": {
+      "created_by_id": "{{user.id}}"
+    }
+  }
+}
